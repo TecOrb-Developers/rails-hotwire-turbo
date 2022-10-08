@@ -27,6 +27,8 @@
 
 /public/assets
 
+/config/env_variables.yml
+
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
