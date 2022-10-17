@@ -1,24 +1,8 @@
-# Hotwire / Turbo setup Rails
+# Rails 7 - Hotwire / Turbo setup
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+References:
+- https://github.com/TecOrb-Developers/handbook/blob/main/rails/hotwire-turbo/info.md
 
-Things you may want to cover:
+- https://github.com/TecOrb-Developers/handbook/blob/main/rails/issues/rails-7-issues.md
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- https://github.com/TecOrb-Developers/handbook/blob/main/rails/issues/rails-7-issues.md#3-how-to-use-devise-with-hotwire--turbojs
