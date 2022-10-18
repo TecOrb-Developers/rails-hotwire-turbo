@@ -1,0 +1,9 @@
+<main class="container">
+  <%= link_to sanitize("&larr; Back to quotes"), articles_path %>
+
+  <div class="header">
+    <h1>Edit Article</h1>
+  </div>
+
+  <%= render "form", article: @article %>
+</main>

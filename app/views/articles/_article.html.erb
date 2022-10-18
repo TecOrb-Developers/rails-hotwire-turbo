@@ -1,0 +1,7 @@
+<div class="article">
+  <%= link_to article.title, article_path(article) %>
+  <div class="article__actions">
+    <%= button_to "Delete", article_path(article), method: :delete, class: "btn btn--light" %>
+    <%= link_to "Edit", edit_article_path(article), class: "btn btn--light" %>
+  </div>
+</div>
