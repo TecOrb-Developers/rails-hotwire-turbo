@@ -1,7 +1,9 @@
-<div class="article">
-  <%= link_to article.title, article_path(article) %>
-  <div class="article__actions">
+<tr>
+  <td><%= link_to article.title, article_path(article) %></td>
+  <td><%= article.user.fname %></td>
+  <td><%= article.created_at %></td>
+  <td>
     <%= button_to "Delete", article_path(article), method: :delete, class: "btn btn--light" %>
-    <%= link_to "Edit", edit_article_path(article), class: "btn btn--light" %>
-  </div>
-</div>
+    <%= link_to "Edit", edit_article_path(article), class: "btn btn--light", confirm: "Are you sure?" %>
+  </td>
+</tr>

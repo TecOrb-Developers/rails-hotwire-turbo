@@ -5,7 +5,7 @@
     </div>
   <% end %>
 
-  <%= f.input :title, input_html: { autofocus: true } %>
-  <%= f.textbox :title, input_html: { autofocus: true } %>
+  <%= f.input :title, input_html: { autofocus: true } %> <br>
+  <%= f.input :description, input_html: { autofocus: true }, as: :text %><br>
   <%= f.submit class: "btn btn--secondary" %>
 <% end %>

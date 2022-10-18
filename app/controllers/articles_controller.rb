@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
-  before_action :set_quote, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+  before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   def index
     @articles = Article.all
@@ -13,7 +14,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(article_params)
+    @article = current_user.articles.new(article_params)
 
     if @article.save
       redirect_to articles_path, notice: "Article successfully created."
@@ -40,12 +41,12 @@ class ArticlesController < ApplicationController
 
   private
 
-  def set_quote
+  def set_article
     @article = Article.find(params[:id])
   end
 
   def article_params
-    params.require(:quote).permit(:name)
+    params.require(:article).permit(:title, :description)
   end
 
 end
