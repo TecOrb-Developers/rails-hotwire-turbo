@@ -4,6 +4,8 @@
   <div class="header">
     <h1>New Article</h1>
   </div>
-
-  <%= render "form", article: @article %>
+  
+  <%= turbo_frame_tag "new_article_turbo_frame" do %>
+    <%= render "form", article: @article %>
+  <%end%>
 </main>

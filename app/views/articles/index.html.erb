@@ -1,8 +1,18 @@
 <main class="container">
-  <div class="header">
-    <h1>Articles</h1>
-    <%= link_to "New Article", new_article_path, class: "btn btn--primary" %>
-  </div>
+  <!-- # Rule 1 of turbo frame:
+    When clicking on a link within a Turbo Frame, Turbo expects a frame of the **same id** on the **target page**. 
+    It will then replace the Frame's content on the **source page (current page)** with the Frame's content on the **target page**.
+
+    let's wrap a piece of the Articles#new page (piece means we want just new form here on click of New Article) in a Turbo Frame of the **same id**. 
+
+    So We have to set form within turbo_frame_tag the same id "new_article_turbo_frame"
+   -->
+  <%= turbo_frame_tag "new_article_turbo_frame" do %>
+    <div class="header">
+      <h1>Articles</h1>
+      <%= link_to "New Article", new_article_path, class: "btn btn--primary" %>
+    </div>
+  <% end %>
   <table border="1">
     <thead>
       <tr>
