@@ -5,7 +5,7 @@
 
 - [Info](https://github.com/TecOrb-Developers/handbook/blob/main/rails/hotwire-turbo/info.md)
 
-- [Devise with Turbo] (https://github.com/TecOrb-Developers/handbook/blob/main/rails/hotwire-turbo/devise-with-turbo.md)
+- [Devise with Turbo](https://github.com/TecOrb-Developers/handbook/blob/main/rails/hotwire-turbo/devise-with-turbo.md)
 
 - [Issues](https://github.com/TecOrb-Developers/handbook/blob/main/rails/issues/rails-7-issues.md)
 
