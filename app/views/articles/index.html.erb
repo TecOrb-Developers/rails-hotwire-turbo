@@ -6,6 +6,10 @@
     let's wrap a piece of the Articles#new page (piece means we want just new form here on click of New Article) in a Turbo Frame of the **same id**. 
 
     So We have to set form within turbo_frame_tag the same id "new_article_turbo_frame"
+
+    Rule 2:
+     When clicking on a link within a Turbo Frame, if there is no Turbo Frame with the same id on the target page, the frame disappears, and the error Response has no matching <turbo-frame id="name_of_the_frame"> element is logged in the console.
+      
    -->
   <%= turbo_frame_tag "new_article_turbo_frame" do %>
     <div class="header">

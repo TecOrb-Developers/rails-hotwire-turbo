@@ -4,7 +4,11 @@
   <div class="header">
     <h1>Edit Article</h1>
   </div>
-  
+
+  <!-- Check turbo_frame_tag Rule is explained on index page: 
+    We want to add this form on index page on click of "New article" instead of complete page render.
+    We have added same turbo frame id on index page "new_article_turbo_frame"
+  -->
   <%= turbo_frame_tag "new_article_turbo_frame" do %>
     <%= render "form", article: @article %>
   <%end%>
