@@ -1,0 +1,39 @@
+<main class="container">
+  <!-- # Rule 1 of turbo frame:
+    When clicking on a link within a Turbo Frame, Turbo expects a frame of the **same id** on the **target page**. 
+    It will then replace the Frame's content on the **source page (current page)** with the Frame's content on the **target page**.
+
+    let's wrap a piece of the Articles#new page (piece means we want just new form here on click of New Article) in a Turbo Frame of the **same id**. 
+
+    So We have to set form within turbo_frame_tag the same id "new_article_turbo_frame"
+
+    Rule 2:
+     When clicking on a link within a Turbo Frame, if there is no Turbo Frame with the same id on the target page, the frame disappears, and the error Response has no matching <turbo-frame id="name_of_the_frame"> element is logged in the console.
+
+    Rule 3:
+      A link can target another frame than the one it is directly nested.
+      In that case, the Turbo Frame with the same id as the data-turbo-frame data attribute on the source page will be replaced by the Turbo Frame of the same id as the data-turbo-frame data attribute on the target page.
+
+   -->
+  <%= turbo_frame_tag "new_article_turbo_frame" do %>
+    <div class="header">
+      <h1>Articles</h1>
+      <%= link_to "New Article", new_article_path, class: "btn btn--primary" %>
+    </div>
+  <% end %>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Auther</th>
+        <th>Created at</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= turbo_frame_tag "second_frame" do %>
+        <%= render @articles %>
+      <%end%>
+    </tbody>
+  </table>
+</main>
