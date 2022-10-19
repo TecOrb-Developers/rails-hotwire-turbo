@@ -1,0 +1,11 @@
+<%= simple_form_for article, html: { class: "article form" } do |f| %>
+  <% if article.errors.any? %>
+    <div class="error-message">
+      <%= article.errors.full_messages.to_sentence.capitalize %>
+    </div>
+  <% end %>
+
+  <%= f.input :title, input_html: { autofocus: true } %> <br>
+  <%= f.input :description, input_html: { autofocus: true }, as: :text %><br>
+  <%= f.submit class: "btn btn--secondary" %>
+<% end %>
