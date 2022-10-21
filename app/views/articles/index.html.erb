@@ -12,6 +12,7 @@
 
     Rule 3:
       A link can target another frame than the one it is directly nested.
+      
       Here we are adding `data: { turbo_frame: "second_frame" }` to link_to which is already nested with 'new_article_turbo_frame'.
 
       In that case, the Turbo Frame with the same id as the data-turbo-frame data attribute on the source page will be replaced by the Turbo Frame of the same id as the data-turbo-frame data attribute on the target page.
