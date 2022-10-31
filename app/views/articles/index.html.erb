@@ -20,37 +20,28 @@
       Example:
       click on the "New Article" button. We should see our articles list (which is in second_frame) will be replaced by the new article form's 'second_frame' section. This is because our link now targets the second frame.
 
-    Special frame `_top`:
-      If we wanted our "New Article" button to replace the whole page, we could use `data-turbo-frame="_top"`.
-
-      When using the `"_top"` keyword, the URL of the page changes to the URL of the target page, which is another difference from when using a regular Turbo Frame.
-
-      Browser will replace the whole page from the top with new article page
-
-      Every page has frame `"_top"`  by default
-
    -->
-  
-  <div class="header">
-    <h1>Articles</h1>
-    <%= turbo_frame_tag "new_article_turbo_frame" do %>
-      <!-- let's tell our "New Article" link to target the "_top" frame -->
-      <%= link_to "New Article", new_article_path, data: { turbo_frame: "_top" }%>
-    <% end %>
-  </div>
-  
-
-  <table border="1">
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Auther</th>
-        <th>Created at</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <%= render @articles %>
-    </tbody>
-  </table>
+  <%= turbo_frame_tag "new_article_turbo_frame" do %>
+    <div class="header">
+      <h1>Articles</h1>
+      <%= turbo_frame_tag "second_frame" do %>
+        <%= link_to "New Article", new_article_path, data: { turbo_frame: "second_frame" }%>
+      <%end%>
+    </div>
+  <% end %>
+  <hr>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Title</th>
+          <th>Auther</th>
+          <th>Created at</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @articles %>
+      </tbody>
+    </table>
 </main>
