@@ -18,28 +18,30 @@
       In that case, the Turbo Frame with the same id as the data-turbo-frame data attribute on the source page will be replaced by the Turbo Frame of the same id as the data-turbo-frame data attribute on the target page.
 
       Example:
-      click on the "New Article" button. We should see our articles list (which is in second_frame) will be replaced by the new article form. This is because our link now targets the second frame.
+      click on the "New Article" button. We should see our articles list (which is in second_frame) will be replaced by the new article form's 'second_frame' section. This is because our link now targets the second frame.
 
    -->
   <%= turbo_frame_tag "new_article_turbo_frame" do %>
     <div class="header">
       <h1>Articles</h1>
-      <%= link_to "New Article", new_article_path, data: { turbo_frame: "second_frame" }, class: "btn btn--primary" %>
+      <!-- Nested frame 'second_frame' is targatting the bottom table 'second_frame' has to replace with this new form's 'second_frame' part -->
+      <%= link_to "New Article", new_article_path, data: { turbo_frame: "second_frame" }%>
     </div>
   <% end %>
-  <table border="1">
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Auther</th>
-        <th>Created at</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <%= turbo_frame_tag "second_frame" do %>
+  <!--  frame 'second_frame' -->
+  <%= turbo_frame_tag "second_frame" do %>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Auther</th>
+          <th>Created at</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
         <%= render @articles %>
-      <%end%>
-    </tbody>
-  </table>
+      </tbody>
+    </table>
+  <%end%>
 </main>
