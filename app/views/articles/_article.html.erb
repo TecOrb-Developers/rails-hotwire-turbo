@@ -4,7 +4,7 @@
   <td><%= article.user.fname %></td>
   <td><%= article.created_at %></td>
   <td>
-    <%= button_to "Delete", article_path(article), method: :delete, class: "btn btn--light" %>
+    <%= button_to "Delete", article_path(article), method: :delete, form: { data: { turbo_confirm: "Are you sure you want delete?" } } %>
     <%= link_to "Edit", edit_article_path(article), class: "btn btn--light", confirm: "Are you sure?" %>
   </td>
 </tr>
