@@ -24,13 +24,12 @@
   <%= turbo_frame_tag "new_article_turbo_frame" do %>
     <div class="header">
       <h1>Articles</h1>
-      <!-- Nested frame 'second_frame' is targatting the bottom table 'second_frame' has to replace with this new form's 'second_frame' part -->
-      <%= link_to "New Article", new_article_path, data: { turbo_frame: "second_frame" }%>
+      <%= turbo_frame_tag "second_frame" do %>
+        <%= link_to "New Article", new_article_path, data: { turbo_frame: "second_frame" }%>
+      <%end%>
     </div>
   <% end %>
   <hr>
-  <!--  frame 'second_frame' -->
-  <%= turbo_frame_tag "second_frame" do %>
     <table border="1">
       <thead>
         <tr>
@@ -45,5 +44,4 @@
         <%= render @articles %>
       </tbody>
     </table>
-  <%end%>
 </main>
