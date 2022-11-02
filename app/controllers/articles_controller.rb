@@ -17,7 +17,10 @@ class ArticlesController < ApplicationController
     @article = current_user.articles.new(article_params)
 
     if @article.save
-      redirect_to articles_path, notice: "Article successfully created."
+      respond_to do |format|
+        format.html { redirect_to articles_path, notice: "Article successfully created." }
+        format.turbo_stream { flash.now[:notice] = "Article was successfully created." }
+      end
     else
       render :new
     end
