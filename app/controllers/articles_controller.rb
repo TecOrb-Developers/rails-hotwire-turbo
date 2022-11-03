@@ -31,7 +31,10 @@ class ArticlesController < ApplicationController
 
   def update
     if @article.update(article_params)
-      redirect_to articles_path, notice: "Article successfully updated."
+      respond_to do |format|
+        format.html { redirect_to articles_path, notice: "Article successfully updated." }
+        format.turbo_stream { flash.now[:notice] = "Article was successfully updated." }
+      end
     else
       render :edit
     end

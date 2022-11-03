@@ -1,0 +1,4 @@
+<%= turbo_stream.replace "article-form-#{@article.id}",  partial: 'shared/flash'%>
+<%= turbo_stream.update @article, partial: "article" , locals: { article: @article } %>
+
+<!-- https://www.hotrails.dev/turbo-rails/turbo-frames-and-turbo-streams -->
