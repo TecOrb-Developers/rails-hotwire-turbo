@@ -4,6 +4,7 @@
 ### References:
 
 - [Info](https://github.com/TecOrb-Developers/handbook/blob/main/rails/hotwire-turbo/info.md)
+- [Turbo frames](https://github.com/TecOrb-Developers/handbook/blob/main/rails/hotwire-turbo/turbo_rules.md)
 - [Devise with Turbo](https://github.com/TecOrb-Developers/handbook/blob/main/rails/hotwire-turbo/devise-with-turbo.md)
 - [Issues](https://github.com/TecOrb-Developers/handbook/blob/main/rails/issues/rails-7-issues.md)
 - [Major key](https://github.com/TecOrb-Developers/handbook/blob/main/rails/issues/rails-7-issues.md#3-how-to-use-devise-with-hotwire--turbojs)
