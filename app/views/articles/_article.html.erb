@@ -1,13 +1,14 @@
-
-<tr>
-  <%= turbo_frame_tag "article_#{article.id}" do %>
+<tr id="<%= dom_id(article)%>">
   <td><%= article.id %></td>
-  <td><%= link_to article.title, article_path(article) %></td>
+  <td>
+    <%= turbo_frame_tag article do %>
+      <%= link_to article.title, article_path(article) %>
+    <%end%>
+  </td>
   <td><%= article.user.fname %></td>
   <td><%= article.created_at %></td>
   <td>
     <%= button_to "Delete", article_path(article), method: :delete, data: { turbo_confirm: "Are you sure you want delete?" } %>
-      <%= link_to "Edit", edit_article_path(article), data: { turbo_frame: "second_frame"} %>
+    <%= link_to "Edit", edit_article_path(article), data: { turbo_frame: dom_id(article) } %>
   </td>
-  <%end%>
 </tr>
