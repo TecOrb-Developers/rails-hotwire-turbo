@@ -1,11 +1,13 @@
 <main class="container">
   <%= link_to sanitize("&larr; Back to quotes"), articles_path %>
 
-  <%= turbo_frame_tag "second_frame" do %>
-    <div class="header">
-      <h4>Edit Article (#<%=@article.id%>)</h4>
-    </div>
+  <%= turbo_frame_tag @article do %>
+    <div id="article-form-<%=@article.id%>">
+      <div class="header">
+        <h4>Edit Article (#<%=@article.id%>)</h4>
+      </div>
 
-    <%= render "form", article: @article %>
+      <%= render "form", article: @article %>
+    </div>
   <%end%>
 </main>
