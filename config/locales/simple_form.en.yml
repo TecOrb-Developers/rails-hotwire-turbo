@@ -1,0 +1,16 @@
+en:
+  simple_form:
+    placeholders:
+      article:
+        title: Title of your article
+        description: Explain more in details about article
+    labels:
+      article:
+        title: Title
+        description: Description
+
+  helpers:
+    submit:
+      article:
+        create: Create article
+        update: Update article

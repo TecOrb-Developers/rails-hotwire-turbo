@@ -1,0 +1,12 @@
+<%= simple_form_for article ,html: { class: "article-form" } do |f| %>
+  <% if article.errors.any? %>
+    <div class="error-message">
+      <%= article.errors.full_messages.to_sentence.capitalize %>
+    </div>
+  <% end %>
+
+  <%= f.input :title, input_html: { autofocus: true } %> <br>
+  <%= f.input :description, input_html: { autofocus: true }, as: :text %><br>
+  <%= link_to "Cancel", articles_path, data: { turbo_frame: "_top" } %>
+  <%= f.submit %>
+<% end %>
