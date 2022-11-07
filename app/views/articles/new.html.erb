@@ -1,0 +1,14 @@
+<main class="container">
+  <%= link_to sanitize("&larr; Back to articles"), articles_path %>
+
+  <%= turbo_frame_tag @article do %>
+    <div id="article-form">
+      <div class="header">
+        <h4>New Article</h4>
+      </div>
+      
+      <%= render "form", article: @article %>
+    </div>
+  <%end%>
+  
+</main>
