@@ -4,3 +4,4 @@
 		<%= link_to "Articles", articles_path %> 
 	</li>
 </ul>
+<p> <%= link_to "Sign Out", destroy_user_session_path, data: { turbo_method: :delete }, class: "nav-link" %> </p>
