@@ -11,7 +11,9 @@
   </head>
 
   <body>
-    <p> <%= link_to "Sign Out", destroy_user_session_path, data: { turbo_method: :delete }, class: "nav-link" %> </p>
+    <%if current_user.present?%>
+      <p> <%= link_to "Sign Out", destroy_user_session_path, data: { turbo_method: :delete }, class: "nav-link" %> </p>
+    <%end%>
     <hr>
     <%=render 'shared/flash'%>
     <%= yield %>
