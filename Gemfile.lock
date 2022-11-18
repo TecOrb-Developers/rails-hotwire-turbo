@@ -282,7 +282,6 @@ DEPENDENCIES
   mysql2 (~> 0.5)
   puma (~> 5.0)
   rails (~> 7.0.4)
-  railties
   redis (~> 4.0)
   rspec-rails (~> 6.0.0)
   rubocop
