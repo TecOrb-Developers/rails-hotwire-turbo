@@ -13,10 +13,9 @@ default: &default
   adapter: mysql2
   encoding: utf8mb4
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: root 
-  password: root1234
-  socket: /var/run/mysqld/mysqld.sock
-
+  username:  <%=ENV["DB_USERNAME_DEVELOPMENT"]%>
+  password:  <%=ENV["DB_PASSWORD_DEVELOPMENT"]%>
+  socket:    <%=ENV["SQL_SOCKET"]%>
 development:
   <<: *default
   database: rails_hotwire_turbo_development
