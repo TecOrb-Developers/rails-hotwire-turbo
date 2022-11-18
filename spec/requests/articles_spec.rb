@@ -6,7 +6,7 @@ RSpec.describe "Articles", type: :request do
 
  let(:valid_attribute) do {
 
-     title: "",   }
+     title: ""   }
 
 
  end
@@ -29,7 +29,7 @@ RSpec.describe "Articles", type: :request do
       expect(response).to be_truthy
 
     end
-  end
+   end
 
    describe "GET/show" do
 
@@ -40,8 +40,6 @@ RSpec.describe "Articles", type: :request do
       expect(response).to be_truthy
 
     end
-
-
    end
 
 
@@ -56,8 +54,6 @@ RSpec.describe "Articles", type: :request do
       expect(response).to be_truthy
 
     end
-
-
    end
 
 
@@ -72,9 +68,7 @@ RSpec.describe "Articles", type: :request do
 
           post articles_url, params: {article: valid_attribute}
             end.to change(Article, :count).by(0)
-          
-
-      end
+             end
 
 
       it "redirects to created article" do
@@ -84,9 +78,7 @@ RSpec.describe "Articles", type: :request do
         expect(response).to be_truthy
 
       end
-
-
-    end
+      end
 
       context "with invalid valid_attribute" do
 
@@ -96,8 +88,6 @@ RSpec.describe "Articles", type: :request do
 
             post articles_url, params: {article: invalid_attribute}
           end.to change(Article, :count).by(0)
-
-
           end
 
 
@@ -106,15 +96,11 @@ RSpec.describe "Articles", type: :request do
             post articles_url, params: {article: invalid_attribute}
 
             expect(response).to be_truthy
-
-          end
+            end
+            end
+            end
 
 
         end
-
-      end
-
-
-   end
 
 
