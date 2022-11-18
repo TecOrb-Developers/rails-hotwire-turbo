@@ -1,0 +1,15 @@
+current directory: /home/ayush/rails-hotwire-turbo/vendor/bundle/ruby/3.1.0/gems/bootsnap-1.13.0/ext/bootsnap
+/usr/share/rvm/rubies/ruby-3.1.2/bin/ruby -I /usr/share/rvm/rubies/ruby-3.1.2/lib/ruby/3.1.0 -r ./siteconf20221117-20146-ggd74x.rb extconf.rb
+creating Makefile
+
+current directory: /home/ayush/rails-hotwire-turbo/vendor/bundle/ruby/3.1.0/gems/bootsnap-1.13.0/ext/bootsnap
+make DESTDIR\= clean
+
+current directory: /home/ayush/rails-hotwire-turbo/vendor/bundle/ruby/3.1.0/gems/bootsnap-1.13.0/ext/bootsnap
+make DESTDIR\=
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.so
+
+current directory: /home/ayush/rails-hotwire-turbo/vendor/bundle/ruby/3.1.0/gems/bootsnap-1.13.0/ext/bootsnap
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 bootsnap.so ./.gem.20221117-20146-6eb8p8/bootsnap
