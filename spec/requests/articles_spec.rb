@@ -6,7 +6,7 @@ RSpec.describe "Articles", type: :request do
 
  let(:valid_attribute) do {
 
-     title: ""   }
+     title: "welcome to hotwire"   }
 
 
  end
