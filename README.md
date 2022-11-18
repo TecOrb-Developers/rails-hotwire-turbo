@@ -2,6 +2,9 @@
 
 - Setup with devise (Check commit [bf5009e635153aa1c7feb4eea6fee81dca835897](https://github.com/TecOrb-Developers/rails-hotwire-turbo/commit/bf5009e635153aa1c7feb4eea6fee81dca835897))
 
+- [Rubocop](https://github.com/rubocop/rubocop) tool is used for code formatting
+	- Auto correction: `rubocop --config config/rubocop.yml -A`
+
 ### References:
 - [Rails 7 setup](https://github.com/TecOrb-Developers/handbook/blob/main/rails/hotwire-turbo/info.md)
 	- [Hotwire / Turbo](https://github.com/TecOrb-Developers/handbook/blob/main/rails/hotwire-turbo/info.md)

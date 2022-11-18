@@ -5,10 +5,11 @@ class TurboDeviseController < ApplicationController
     rescue ActionView::MissingTemplate => e
       raise e if get?
 
-      has_errors? && default_action
-      render rendering_options.merge(formats: :html, status: :unprocessable_entity)
-    else
-      redirect_to navigation_location
+      if has_errors? && default_action
+        render rendering_options.merge(formats: :html, status: :unprocessable_entity)
+      else
+        redirect_to navigation_location
+      end
     end
   end
 
