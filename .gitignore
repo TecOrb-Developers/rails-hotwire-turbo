@@ -35,3 +35,4 @@
 /config/credentials/production.key
 
 /config/credentials/environment.key
+/vendor/bundle
