@@ -5,4 +5,14 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :trackable
 
   has_many :articles, dependent: :destroy
+
+  validates :email, presence: true
+  validates :password, presence: true
+
+
+  def role
+
+    role = @current_user
+    
+  end
 end

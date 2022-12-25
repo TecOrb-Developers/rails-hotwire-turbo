@@ -1,11 +1,25 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
-require "spec_helper"
-ENV["RAILS_ENV"] ||= "test"
-require_relative "../config/environment"
+require 'spec_helper'
+ENV['RAILS_ENV'] ||= 'test'
+require_relative '../config/environment'
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
-require "rspec/rails"
+require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
+
+require "devise"
+Dir[Rails.root.join("spec", "support", "**", "*.rb")].sort.each {|f| require f }
+
+require_relative "support/chrome"
+require_relative "support/factory_bot"
+
+
+RSpec.configure do |config|
+  config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include Warden::Test::Helpers
+  config.use_transactional_fixtures = true
+end
+
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
@@ -20,6 +34,7 @@ require "rspec/rails"
 # directory. Alternatively, in the individual `*_spec.rb` files, manually
 # require only the support files necessary.
 #
+
 require "devise"
 Dir[Rails.root.join("spec", "support", "**", "*.rb")].sort.each {|f| require f }
 
