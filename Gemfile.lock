@@ -68,6 +68,7 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.1)
       public_suffix (>= 2.0.2, < 6.0)
+    ast (2.4.2)
     bcrypt (3.1.18)
     bindex (0.8.1)
     bootsnap (1.13.0)
@@ -111,11 +112,12 @@ GEM
       actionpack (>= 6.0.0)
       railties (>= 6.0.0)
     io-console (0.5.11)
-    irb (1.4.2)
+    irb (1.4.3)
       reline (>= 0.3.0)
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
+    json (2.6.2)
     loofah (2.19.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -137,9 +139,14 @@ GEM
     net-smtp (0.3.3)
       net-protocol
     nio4r (2.5.8)
+    nokogiri (1.13.9-x86_64-darwin)
+      racc (~> 1.4)
     nokogiri (1.13.9-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
+    parallel (1.22.1)
+    parser (3.1.2.1)
+      ast (~> 2.4.1)
     public_suffix (5.0.0)
     puma (5.6.5)
       nio4r (~> 2.0)
@@ -177,9 +184,10 @@ GEM
       rake (>= 12.2)
       thor (~> 1.0)
       zeitwerk (~> 2.5)
+    rainbow (3.1.1)
     rake (13.0.6)
     redis (4.8.0)
-    regexp_parser (2.6.0)
+    regexp_parser (2.6.1)
     reline (0.3.1)
       io-console (~> 0.5)
     responders (3.0.1)
@@ -203,6 +211,19 @@ GEM
       rspec-mocks (~> 3.11)
       rspec-support (~> 3.11)
     rspec-support (3.12.0)
+    rubocop (1.39.0)
+      json (~> 2.3)
+      parallel (~> 1.10)
+      parser (>= 3.1.2.1)
+      rainbow (>= 2.2.2, < 4.0)
+      regexp_parser (>= 1.8, < 3.0)
+      rexml (>= 3.2.5, < 4.0)
+      rubocop-ast (>= 1.23.0, < 2.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (>= 1.4.0, < 3.0)
+    rubocop-ast (1.23.0)
+      parser (>= 3.1.1.0)
+    ruby-progressbar (1.11.0)
     rubyzip (2.3.2)
     selenium-webdriver (4.6.1)
       childprocess (>= 0.5, < 5.0)
@@ -229,6 +250,7 @@ GEM
       railties (>= 6.0.0)
     tzinfo (2.0.5)
       concurrent-ruby (~> 1.0)
+    unicode-display_width (2.3.0)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.2.0)
@@ -249,6 +271,7 @@ GEM
     zeitwerk (2.6.6)
 
 PLATFORMS
+  x86_64-darwin-21
   x86_64-linux
 
 DEPENDENCIES
@@ -266,6 +289,7 @@ DEPENDENCIES
   rails-controller-testing
   redis (~> 4.0)
   rspec-rails (~> 6.0.0)
+  rubocop
   selenium-webdriver
   simple_form (~> 5.1.0)
   sprockets-rails
