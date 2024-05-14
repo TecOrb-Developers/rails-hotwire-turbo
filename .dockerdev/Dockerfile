@@ -1,4 +1,4 @@
-FROM ruby:3.2.0
+FROM ruby:3.0.2
 
 ENV NODE_VERSION 16.20.2
 
@@ -22,7 +22,7 @@ RUN nvm install $NODE_VERSION
 RUN nvm use $NODE_VERSION
 RUN npm install -g yarn
 
-COPY package.json yarn.lock ./
+COPY yarn.lock ./
 RUN yarn
 
 ENV NVM_DIR /root/.nvm
