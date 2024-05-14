@@ -2,8 +2,10 @@ AllCops:
   Exclude:
     - 'bin/**/*'
     - 'config/**/*'
-    - 'test/**/*'
+    - 'spec/**/*'
     - 'db/**/*'
+    - 'vendor/**/*'
+    - 'storage/**/*'
 
 # CUSTOM
 Style/FrozenStringLiteralComment:
