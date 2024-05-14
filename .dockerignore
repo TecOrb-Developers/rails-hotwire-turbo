@@ -1,0 +1,3 @@
+.git
+.dockerignore
+config/env_variables.yml

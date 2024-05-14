@@ -1,0 +1,16 @@
+build-essential
+autoconf
+bison
+libssl-dev
+libyaml-dev
+libreadline6-dev
+zlib1g-dev
+libncurses5-dev
+python2
+htop
+git
+libgmp-dev
+imagemagick
+postgresql-client
+chromium
+openssl
